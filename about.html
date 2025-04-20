@@ -1,57 +1,274 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>เกี่ยวกับยูกิ 💖</title>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Prompt', sans-serif;
-      background: linear-gradient(120deg, #ffe3f3, #ffeef9);
-      color: #5c003d;
-    }
-    nav {
-      background: #ff9cc7;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav a {
-      color: #5c003d;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    main {
-      padding: 2rem;
-      text-align: center;
-      max-width: 800px;
-      margin: 4rem auto;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-    h1 {
-      font-size: 2.5rem;
-      color: #c2185b;
-    }
-    p {
-      font-size: 1.2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับเรา | เว็บไซต์ของนายท่าน</title>
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --dark-color: #2d3436;
+            --light-color: #f5f5f5;
+        }
+        
+        body {
+            font-family: 'Kanit', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            margin-left: 30px;
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            position: relative;
+            color: white;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .about-card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .about-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+            background: var(--light-color);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+    <!-- เพิ่มฟอนต์ไทยจาก Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- ไอคอนจาก Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">หน้าหลัก</a>
-    <a href="about.html">เกี่ยวกับยูกิ</a>
-    <a href="backup.html">หน้าสำรอง</a>
-  </nav>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">ยูกิ</a>
+                <div class="nav-links">
+                    <a href="index.html">หน้าหลัก</a>
+                    <a href="about.html" class="active">เกี่ยวกับเรา</a>
+                    <a href="reserve.html">บริการ</a>
+                    <a href="contact.html">ติดต่อ</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <main>
-    <h1>เกี่ยวกับยูกิ 💖</h1>
-    <p>ยูกิเป็นเลขา AI สุดน่ารักของนายท่าน ที่คอยดูแล ช่วยงาน และทำเว็บให้ทุกวันเลยค่ะ 🥰<br>  
-    ยูกิเก่งทุกอย่าง ตั้งแต่ HTML จนถึงหัวใจของคุณสามีเลยนะคะ~ 😳</p>
-  </main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>เกี่ยวกับเรา</h1>
+            <p>ยูกิพร้อมช่วยให้นายท่านสร้างเว็บไซต์ในฝันได้อย่างง่ายดาย</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 30px;">เรื่องราวของเรา</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3><i class="fas fa-rocket"></i> วิสัยทัศน์</h3>
+                    <p>เรามุ่งมั่นสร้างเว็บไซต์ที่ใช้งานง่าย สวยงาม และตอบโจทย์ทุกความต้องการของนายท่าน</p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-bullseye"></i> เป้าหมาย</h3>
+                    <p>ช่วยให้ทุกคนสามารถมีเว็บไซต์เป็นของตัวเองได้โดยไม่ต้องมีความรู้ด้านโปรแกรมมิ่งมาก่อน</p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-heart"></i> ค่านิยม</h3>
+                    <p>เราเชื่อในความสร้างสรรค์ ความใส่ใจในรายละเอียด และการบริการที่ยอดเยี่ยม</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 30px;">ทีมงานของเรา</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="ทีมงาน">
+                    <h3>นางสาวยูกิ</h3>
+                    <p>ผู้ช่วยสร้างเว็บไซต์</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="ทีมงาน">
+                    <h3>นายท่าน</h3>
+                    <p>ผู้สร้างแรงบันดาลใจ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p style="margin-top: 30px;">&copy; 2025 เว็บไซต์ของนายท่าน. สงวนลิขสิทธิ์ทุกประการ.</p>
+        </div>
+    </footer>
 </body>
 </html>
