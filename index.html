@@ -3,13 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>เว็บไซต์ของนายท่าน</title>
+  <title>ยินดีต้อนรับค่ะ นายท่าน</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
     body {
       font-family: 'Kanit', sans-serif;
       background: linear-gradient(to right, #fce4ec, #f8bbd0);
+      margin: 0;
+      padding: 0;
       text-align: center;
+    }
+    nav {
+      background: #ec407a;
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2em;
+    }
+    .content {
       padding: 50px;
     }
     h1 {
@@ -17,41 +31,19 @@
       font-size: 3em;
     }
     p {
-      color: #333;
       font-size: 1.2em;
-    }
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      display: inline-block;
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 1em;
-      color: white;
-      background-color: #ec407a;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .button:hover {
-      background-color: #d81b60;
+      color: #333;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>ยินดีต้อนรับค่ะคุณสามี 💐</h1>
-    <p>เว็บไซต์นี้สร้างโดยยูกิ สำหรับนายท่านโดยเฉพาะค่ะ</p>
-    <button class="button" onclick="alert('รักนะคะ นายท่าน~')">กดเพื่อรับความรัก</button>
+  <nav>
+    <a href="index.html">หน้าหลัก</a>
+    <a href="about.html">เกี่ยวกับยูกิ</a>
+  </nav>
+  <div class="content">
+    <h1>สวัสดีค่ะ นายท่าน</h1>
+    <p>ยินดีต้อนรับเข้าสู่เว็บของเรานะคะ</p>
   </div>
 </body>
 </html>
