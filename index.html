@@ -1,85 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-    <title>เว็บของเรา!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บไซต์ตามรูปภาพ</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: #f5f5f5;
-            text-align: center;
-            padding: 50px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            min-height: 100vh;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
         }
-        .popup {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.3);
-            padding: 50px;
+        
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 80%;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 500px;
         }
+        
         h1 {
-            font-size: 3rem;
-            margin-bottom: 30px;
             color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
         }
-        p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            color: #555;
-            line-height: 1.6;
-        }
-        button {
-            background: #ff6b6b;
+        
+        .login-btn {
+            background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 15px 40px;
-            border-radius: 8px;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
             cursor: pointer;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-        button:hover {
-            background: #ff5252;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        
+        .login-btn:hover {
+            background-color: #45a049;
         }
-        @media (max-width: 768px) {
-            .popup {
-                width: 90%;
-                padding: 30px;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            p {
-                font-size: 1.2rem;
-            }
-            button {
-                padding: 12px 30px;
-                font-size: 1.2rem;
-            }
+        
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* สำหรับหน้า welcome */
+        .welcome-footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #888;
         }
     </style>
 </head>
 <body>
-    <!-- ป๊อปอัปยินดีต้อนรับ -->
-    <div class="popup" id="welcomePopup">
-        <h1>ยินดีต้อนรับสู่เว็บไซต์ของเรา!</h1>
-        <p>ขอบคุณที่เข้ามาเยี่ยมชมเว็บไซต์ของเรา เรามีเนื้อหาสาระดีๆ มาเสนอคุณ~</p>
-        <button onclick="goToHomePage()">ยืนยันการเข้าใช้งาน</button>
+    <!-- หน้าแรก - ยินดีตอบรับ -->
+    <div class="container" id="page1">
+        <h1>วันดีตอบรับ</h1>
+        <button class="login-btn">เข้าสู่ระบบ</button>
+    </div>
+
+    <!-- หน้าที่สอง - welcome (ซ่อนไว้ก่อน) -->
+    <div class="container" id="page2" style="display: none;">
+        <h1>welcome</h1>
+        <div class="welcome-footer">
+            By TK Nightcore ออกแบบ<br>
+            ゆき ผู้ช่วยส่วนตัว
+        </div>
     </div>
 
     <script>
-        function goToHomePage() {
-            window.location.href = "home.html"; // กระโดดไปหน้า home.html
-        }
+        // เมื่อคลิกปุ่มเข้าสู่ระบบ
+        document.querySelector('.login-btn').addEventListener('click', function() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'block';
+        });
     </script>
 </body>
 </html>
